@@ -9,7 +9,7 @@ const DATABASE_URL =
   process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
 module.exports = {
   VERSION: require('./package.json').version,
-  SESSION_ID: (process.env.SESSION_ID || '15_7_0d5d_459f_e335').trim(),
+  SESSION_ID: (process.env.SESSION_ID || '23_7_f172_2a4e_cc0e').trim(),
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
@@ -33,7 +33,7 @@ module.exports = {
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   BRANCH: 'master',
   STICKER_PACKNAME: process.env.STICKER_PACKNAME || '❤️,LyFE',
-  ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE),
+  ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE) || false,
   LOG_MSG: toBool(process.env.LOG_MSG) || false,
   RMBG_KEY: process.env.RMBG_KEY || 'null',
   BAILEYS_LOG_LVL: process.env.BAILEYS_LOG_LVL || 'silent',
@@ -51,7 +51,7 @@ module.exports = {
   REJECT_CALL: toBool(process.env.REJECT_CALL),
   VPS: toBool(process.env.VPS),
   AUTO_STATUS_VIEW: (process.env.AUTO_STATUS_VIEW || 'false').trim(),
-  SEND_READ: toBool(process.env.SEND_READ),
+  SEND_READ: toBool(process.env.SEND_READ) || false,
   KOYEB: toBool(process.env.KOYEB),
   KOYEB_NAME: (process.env.KOYEB_NAME || '').trim(),
   KOYEB_API: (process.env.KOYEB_API || '').trim(),
